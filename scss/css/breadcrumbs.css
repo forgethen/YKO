@@ -1,0 +1,10 @@
+.breadcrumbs {
+  padding: 25px 0;
+}
+.breadcrumbs .breadcrumbs-link--main {
+  background: none;
+  width: auto;
+}
+.breadcrumbs ul {
+  gap: 26px;
+}

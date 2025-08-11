@@ -1,0 +1,47 @@
+.page-404 .caption {
+  text-align: center;
+  margin-bottom: 61px;
+  font-size: 254px;
+  font-weight: 400;
+  line-height: 275px;
+  color: black;
+}
+.page-404 .caption + p {
+  font-size: 102px;
+  font-weight: 400;
+  line-height: 111px;
+  margin-bottom: 121px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.marquee-container {
+  width: 100dvw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.marquee {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 15s linear infinite;
+  color: #878787;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 60px;
+  line-height: 111px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
