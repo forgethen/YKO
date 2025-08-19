@@ -17,7 +17,8 @@
   grid-template-columns: calc((100% - 20px) / 12 * 6) calc(50dvw + 20px);
 }
 .contacts-page .contacts__wrapper > :first-child {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding-right: 54px;
 }
 .contacts-page .contacts__wrapper > :last-child picture {
@@ -34,15 +35,18 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-position: center;
-  object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .contacts-page .contacts__item {
   position: relative;
 }
 .contacts-page .contacts-data {
   background-color: white;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border-radius: 50px;
   padding: 20px 20px 40px;
   position: relative;
@@ -51,6 +55,7 @@
 .contacts-page .contacts-data::before {
   content: "";
   position: absolute;
+  -webkit-transition: all 0.3s;
   transition: all 0.3s;
   transition: all 0.3s;
   content: "";
@@ -59,22 +64,37 @@
   left: 0px;
   right: 0px;
   bottom: 0px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#000000), to(rgba(0, 0, 0, 0)));
   background: linear-gradient(to bottom, #000000 0%, rgba(0, 0, 0, 0) 100%);
   border-radius: 50px;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   pointer-events: none;
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask-composite: exclude;
+  -webkit-mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000)) content-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #000));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+          mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000)) content-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #000));
+          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
   padding: 1px;
 }
 .contacts-page .contacts__head {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding-left: 35px;
   padding-right: 24px;
   margin-bottom: 17px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .contacts-page .contacts__head .logo {
   width: 114px;
@@ -82,11 +102,21 @@
   height: 114px;
 }
 .contacts-page .contacts__basic {
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 50px;
   padding: 57px 24px 38px;
   border-radius: 50px;
@@ -109,11 +139,21 @@
   width: 100%;
 }
 .contacts-page .contacts__info-item {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 .contacts-page .contacts__info > :first-child {
   padding-left: 35px;
@@ -163,4 +203,4 @@
 }
 .contacts-page .map .container {
   position: relative;
-}
+}/*# sourceMappingURL=contacts-page.css.map */

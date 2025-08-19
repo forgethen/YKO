@@ -18,6 +18,12 @@
     margin-bottom: 250px;
   }
 
+  &-section + .adv-section-main {
+    top: -60px;
+    padding-top: 130px;
+    border-radius: 0 60px 60px 0;
+  }
+
   .section-title {
   }
 

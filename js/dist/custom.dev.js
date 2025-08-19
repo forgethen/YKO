@@ -115,16 +115,55 @@ $(document).ready(function () {
     sliders.length && sliderinit();
   }
 
-  if ($(".news-slider-text").length > 0) {
+  if ($(".rutube-reviews-slider").length > 0) {
     var _sliderinit = function _sliderinit() {
       _sliders.forEach(function (slider, index) {
         var navNext = undefined;
         var navPrev = undefined;
 
         if (!slider.swiper) {
+          navNext = $('.rutube-reviews').find(".swiperBtnNext")[0];
+          navPrev = $('.rutube-reviews').find(".swiperBtnPrev")[0];
+          _mySwipers[index] = new Swiper(slider, {
+            slidesPerView: 2,
+            spaceBetween: 20,
+            breakpoints: {
+              0: {
+                slidesPerView: 1,
+                spaceBetween: 20
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 20
+              }
+            },
+            navigation: {
+              nextEl: navNext && navNext,
+              prevEl: navPrev && navPrev
+            }
+          });
+        } else {
+          return;
+        }
+      });
+    };
+
+    var _sliders = document.querySelectorAll(".rutube-reviews-slider");
+
+    var _mySwipers = [];
+    _sliders.length && _sliderinit();
+  }
+
+  if ($(".news-slider-text").length > 0) {
+    var _sliderinit2 = function _sliderinit2() {
+      _sliders2.forEach(function (slider, index) {
+        var navNext = undefined;
+        var navPrev = undefined;
+
+        if (!slider.swiper) {
           navNext = $(slider).find(".swiperBtnNext")[0];
           navPrev = $(slider).find(".swiperBtnPrev")[0];
-          _mySwipers[index] = new Swiper(slider, {
+          _mySwipers2[index] = new Swiper(slider, {
             slidesPerView: 3,
             spaceBetween: 24,
             breakpoints: {
@@ -156,22 +195,22 @@ $(document).ready(function () {
       });
     };
 
-    var _sliders = document.querySelectorAll(".news-slider-text");
+    var _sliders2 = document.querySelectorAll(".news-slider-text");
 
-    var _mySwipers = [];
-    _sliders.length && _sliderinit();
+    var _mySwipers2 = [];
+    _sliders2.length && _sliderinit2();
   }
 
   if ($(".leisure-slider").length > 0) {
-    var _sliderinit2 = function _sliderinit2() {
-      _sliders2.forEach(function (slider, index) {
+    var _sliderinit3 = function _sliderinit3() {
+      _sliders3.forEach(function (slider, index) {
         var navNext = undefined;
         var navPrev = undefined;
 
         if (!slider.swiper) {
-          navNext = $(slider).find(".swiperBtnNext")[0];
-          navPrev = $(slider).find(".swiperBtnPrev")[0];
-          _mySwipers2[index] = new Swiper(slider, {
+          navNext = $('.leisure').find(".swiperBtnNext")[0];
+          navPrev = $('.leisure').find(".swiperBtnPrev")[0];
+          _mySwipers3[index] = new Swiper(slider, {
             slidesPerView: 3,
             spaceBetween: 20,
             breakpoints: {
@@ -203,22 +242,22 @@ $(document).ready(function () {
       });
     };
 
-    var _sliders2 = document.querySelectorAll(".leisure-slider");
+    var _sliders3 = document.querySelectorAll(".leisure-slider");
 
-    var _mySwipers2 = [];
-    _sliders2.length && _sliderinit2();
+    var _mySwipers3 = [];
+    _sliders3.length && _sliderinit3();
   }
 
   if ($(".hang-slider").length > 0) {
-    var _sliderinit3 = function _sliderinit3() {
-      _sliders3.forEach(function (slider, index) {
+    var _sliderinit4 = function _sliderinit4() {
+      _sliders4.forEach(function (slider, index) {
         var navNext = undefined;
         var navPrev = undefined;
 
         if (!slider.swiper) {
-          navNext = $(slider).find(".swiperBtnNext")[0];
-          navPrev = $(slider).find(".swiperBtnPrev")[0];
-          _mySwipers3[index] = new Swiper(slider, {
+          navNext = $('.hang').find(".swiperBtnNext")[0];
+          navPrev = $('.hang').find(".swiperBtnPrev")[0];
+          _mySwipers4[index] = new Swiper(slider, {
             slidesPerView: 2,
             spaceBetween: 20,
             breakpoints: {
@@ -242,10 +281,10 @@ $(document).ready(function () {
       });
     };
 
-    var _sliders3 = document.querySelectorAll(".hang-slider");
+    var _sliders4 = document.querySelectorAll(".hang-slider");
 
-    var _mySwipers3 = [];
-    _sliders3.length && _sliderinit3();
+    var _mySwipers4 = [];
+    _sliders4.length && _sliderinit4();
   }
 
   if ($('.detail-home-slider').length > 0) {
@@ -290,15 +329,15 @@ $(document).ready(function () {
   }
 
   if ($(".projects-slider").length > 0) {
-    var _sliderinit4 = function _sliderinit4() {
-      _sliders4.forEach(function (slider, index) {
+    var _sliderinit5 = function _sliderinit5() {
+      _sliders5.forEach(function (slider, index) {
         var navNext = undefined;
         var navPrev = undefined;
 
         if (!slider.swiper) {
-          navNext = $(slider).find(".swiperBtnNext")[0];
-          navPrev = $(slider).find(".swiperBtnPrev")[0];
-          _mySwipers4[index] = new Swiper(slider, {
+          navNext = $('.projects').find(".swiperBtnNext")[0];
+          navPrev = $('.projects').find(".swiperBtnPrev")[0];
+          _mySwipers5[index] = new Swiper(slider, {
             slidesPerView: 3,
             spaceBetween: 20,
             breakpoints: {
@@ -330,10 +369,10 @@ $(document).ready(function () {
       });
     };
 
-    var _sliders4 = document.querySelectorAll(".projects-slider");
+    var _sliders5 = document.querySelectorAll(".projects-slider");
 
-    var _mySwipers4 = [];
-    _sliders4.length && _sliderinit4();
+    var _mySwipers5 = [];
+    _sliders5.length && _sliderinit5();
   } // КАСТОМНЫЙ SELECT - DROPDOWN
 
 

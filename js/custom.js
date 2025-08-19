@@ -109,6 +109,46 @@ $(document).ready(function () {
     sliders.length && sliderinit();
   }
 
+  if ($(".rutube-reviews-slider").length > 0) {
+    const sliders = document.querySelectorAll(".rutube-reviews-slider");
+    let mySwipers = [];
+
+    function sliderinit() {
+      sliders.forEach((slider, index) => {
+        let navNext = undefined;
+        let navPrev = undefined;
+
+        if (!slider.swiper) {
+          navNext = $('.rutube-reviews').find(".swiperBtnNext")[0];
+          navPrev = $('.rutube-reviews').find(".swiperBtnPrev")[0];
+
+          mySwipers[index] = new Swiper(slider, {
+            slidesPerView: 2,
+            spaceBetween: 20,
+            breakpoints: {
+              0: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              }
+            },
+            navigation: {
+              nextEl: navNext && navNext,
+              prevEl: navPrev && navPrev,
+            },
+          });
+        } else {
+          return;
+        }
+      });
+    }
+
+    sliders.length && sliderinit();
+  }
+
   if ($(".news-slider-text").length > 0) {
     const sliders = document.querySelectorAll(".news-slider-text");
     let mySwipers = [];
@@ -167,8 +207,8 @@ $(document).ready(function () {
         let navPrev = undefined;
 
         if (!slider.swiper) {
-          navNext = $(slider).find(".swiperBtnNext")[0];
-          navPrev = $(slider).find(".swiperBtnPrev")[0];
+          navNext = $('.leisure').find(".swiperBtnNext")[0];
+          navPrev = $('.leisure').find(".swiperBtnPrev")[0];
 
           mySwipers[index] = new Swiper(slider, {
             slidesPerView: 3,
@@ -215,8 +255,8 @@ $(document).ready(function () {
         let navPrev = undefined;
 
         if (!slider.swiper) {
-          navNext = $(slider).find(".swiperBtnNext")[0];
-          navPrev = $(slider).find(".swiperBtnPrev")[0];
+          navNext = $('.hang').find(".swiperBtnNext")[0];
+          navPrev = $('.hang').find(".swiperBtnPrev")[0];
 
           mySwipers[index] = new Swiper(slider, {
             slidesPerView: 2,
@@ -297,8 +337,8 @@ function updateSliderCounter(swiper) {
         let navPrev = undefined;
 
         if (!slider.swiper) {
-          navNext = $(slider).find(".swiperBtnNext")[0];
-          navPrev = $(slider).find(".swiperBtnPrev")[0];
+          navNext = $('.projects').find(".swiperBtnNext")[0];
+          navPrev = $('.projects').find(".swiperBtnPrev")[0];
 
           mySwipers[index] = new Swiper(slider, {
             slidesPerView: 3,
