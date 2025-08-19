@@ -6,6 +6,8 @@
   }
   &-section__head {
     margin-bottom: 43px;
+    display: grid;
+    grid-template-columns: 1fr auto;
     p {
       max-width: calc(100% / 12 * 7.5 + 20px);
       font-size: 16px;
@@ -103,8 +105,10 @@
   }
 
   .swiper-controls {
-    position: absolute;
-    top: 20px;
+    // position: absolute;
+    position: relative;
+    grid-column-start: 2;
+    top: 16px;
     right: 0;
     gap: 10px;
 

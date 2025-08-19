@@ -8,6 +8,9 @@
   }
   &-section__head {
     margin-bottom: 36px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 30px;
     p {
       max-width: calc(100% / 12 * 7.5 + 20px);
       font-size: 16px;
@@ -17,12 +20,19 @@
       margin-top: 31px;
       margin-bottom: 30px;
     }
+    .btn {
+      position: relative;
+      top: 16px;
+      height: 60px;
+      border-radius: 30px;
+    }
   }
 
   &-navigation {
     display: flex;
     align-items: stretch;
     column-gap: 15px;
+    grid-column-start: 1;
     &__item {
       background-color: white;
       border-radius: 10px;
@@ -415,16 +425,28 @@
       font-size: 35px;
       margin-bottom: 25px;
     }
-
+    .slide__desc {
+      font-size: 14px;
+      line-height: 1.2;
+      color: $colorGray;
+      font-weight: 400;
+      margin-bottom: 30px;
+    }
+    .caption:has(+ .slide__desc) {
+      margin-bottom: 11px;
+    }
     .btn {
       height: 50px;
       border-radius: 25px;
-      max-width: 246px;
+      // max-width: 246px;
       font-size: 16px;
-      text-transform: capitalize;
+      // text-transform: capitalize;
+      text-transform: math-auto;
       font-weight: 400;
-      width: 100%;
-      margin: 30px 0 0;
+      // width: 100%;
+      min-width: 50%;
+      width: auto;
+      margin: 0;
       line-height: 1;
       padding-right: 25px;
       padding-left: 25px;
@@ -435,6 +457,7 @@
     &__info,
     &__data {
       width: 100%;
+      margin-bottom: 30px;
       .title {
         font-weight: 400;
         font-size: 14px;
@@ -504,7 +527,7 @@
       }
     }
     &__data {
-      margin-bottom: 36px;
+      // margin-bottom: 36px;
       display: flex;
       column-gap: 20px;
       row-gap: 20px;
@@ -516,10 +539,12 @@
   }
 
   .swiper-controls {
-    position: absolute;
-    top: 20px;
+    // position: absolute;
+    position: relative;
+    top: 16px;
     right: 0;
     gap: 10px;
+    grid-column-start: 2;
 
     @include responsive1549 {
       top: 20px;
