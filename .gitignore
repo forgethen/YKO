@@ -3,6 +3,7 @@
 
 # Исключаем директорию .vscode
 .vscode/
+.node_modules/
 
 # Исключаем архивы
 *.zip
